@@ -58,6 +58,23 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+const generateScopedName = (localName, resourcePath) => {
+  const [filename, parent, type] = resourcePath
+    .replace('.module.css', '')
+    .split('/')
+    .reverse();
+
+  const filePart = [type, parent, filename === 'styles' ? null : filename]
+    .filter(str => str)
+    .join('-');
+
+  const selector = [filePart, type.startsWith(localName) ? null : localName]
+    .filter(str => str)
+    .join('__');
+
+  return selector;
+};
+
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv) {
@@ -492,7 +509,16 @@ module.exports = function(webpackEnv) {
                 importLoaders: 1,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
                 modules: true,
-                getLocalIdent: getCSSModuleLocalIdent,
+                getLocalIdent: (
+                  context,
+                  localIdentName,
+                  localName,
+                  options
+                ) => {
+                  return generateScopedName(localName, context.resourcePath);
+                },
+                //
+                // getLocalIdent: getCSSModuleLocalIdent,
               }),
             },
             // Opt-in support for SASS (using .scss or .sass extensions).
