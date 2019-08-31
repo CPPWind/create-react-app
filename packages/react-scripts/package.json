@@ -1,6 +1,6 @@
 {
   "name": "cpp-react-scripts",
-  "version": "3.1.1",
+  "version": "3.1.1-1",
   "description": "Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "@typescript-eslint/parser": "1.13.0",
     "babel-eslint": "10.0.2",
     "babel-jest": "^24.8.0",
-    "babel-loader": "8.0.5",
+    "babel-loader": "^8.0.6",
     "babel-plugin-named-asset-import": "^0.3.2",
     "babel-preset-react-app": "^9.0.0",
     "camelcase": "^5.2.0",
