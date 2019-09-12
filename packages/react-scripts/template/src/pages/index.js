@@ -1,6 +1,6 @@
 import { Route, Router, Switch } from 'react-router-dom';
 import Error404Page from 'pages/Error404';
-import HomePage from 'pages/home';
+import HomePage from 'pages/Home';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { createBrowserHistory } from 'history';
