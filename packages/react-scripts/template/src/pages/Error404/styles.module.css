@@ -1,0 +1,42 @@
+.page {
+  display: grid;
+}
+
+.error404Page {
+  justify-content: center;
+  align-items: center;
+  & > header {
+    align-self: end;
+  }
+  & > section {
+    text-align: center;
+    height: 5rem;
+  }
+}
+
+.errorPage {
+  display: flex;
+  width: 25rem;
+  background-color: var(--brand-danger);
+  border: 1px solid var(--brand-danger);
+  border-radius: 1rem;
+  justify-content: center;
+}
+
+.errorNav {
+  display: flex;
+  flex-direction: row;
+  align-self: start;
+  justify-content: center;
+}
+.errorLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--brand-success);
+  text-align: center;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

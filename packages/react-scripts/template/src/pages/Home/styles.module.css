@@ -1,0 +1,4 @@
+.page {
+  composes: grid from global;
+  grid-template-columns: 1fr 50%;
+}

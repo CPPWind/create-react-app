@@ -1,0 +1,10 @@
+/*
+ * Copyright (c) 2019.  Cermak, Peterka, & Peterson.
+ */
+
+/* define media query variables and default rules */
+
+/* before use uncomment `@import './__fonts.css'` in client.css */
+:root {
+  /* see ../../node_modules/sails/src/styles/__media.css for defaults */
+}
