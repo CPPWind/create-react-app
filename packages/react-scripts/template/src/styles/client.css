@@ -1,0 +1,20 @@
+@import 'sails/src/global.css';
+@import './__variables.css';
+
+html,
+body,
+#clientRoot {
+  height: 100%; /* .h-100 */
+  width: 100%; /* .w-100 */
+  padding: var(--spacing-none);
+  margin: var(--spacing-none);
+  overflow-y: hidden;
+}
+
+body {
+  background-color: var(--light-blue);
+}
+
+main {
+  background: var(--main-background);
+}

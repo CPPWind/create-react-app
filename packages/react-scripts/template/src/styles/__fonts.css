@@ -1,0 +1,12 @@
+/*
+ * Copyright (c) 2019.  Cermak, Peterka, & Peterson.
+ */
+
+/* define font faces, size, letter spacing and line heights */
+/*@import url("https://fonts.googleapis.com/css?family=Advent+Pro|Open+Sans");*/
+/*@import url("https://fonts.googleapis.com/css?family=Advent+Pro:400,500,700|Open+Sans");*/
+
+/* before use uncomment `@import './__fonts.css'` in __variables.css */
+:root {
+  /* see ../../node_modules/sails/src/styles/__fonts.css for defaults */
+}

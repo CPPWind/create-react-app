@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/client.css';
+import SiteRouter from 'pages';
+import ReactHelmet from 'react-helmet';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  // include apollo here
+  <SiteRouter>
+    <ReactHelmet>
+      <meta charSet="utf-8" />
+      <title>cpp-react-scripts</title>
+    </ReactHelmet>
+  </SiteRouter>
+);
 
 export default App;

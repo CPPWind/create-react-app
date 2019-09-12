@@ -1,0 +1,10 @@
+/*
+ * Copyright (c) 2019.  Cermak, Peterka, & Peterson.
+ */
+
+/* define colors and branding */
+
+/* before use uncomment `@import './__palette.css'` in __variables.css */
+:root {
+  /* see ../../node_modules/sails/src/styles/__palette.css for defaults */
+}

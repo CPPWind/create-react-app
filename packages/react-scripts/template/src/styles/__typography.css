@@ -1,0 +1,10 @@
+/*
+ * Copyright (c) 2019.  Cermak, Peterka, & Peterson.
+ */
+
+/* paragraph, h1-h6, quotes, font weights */
+
+/* before use uncomment `@import './__typography.css'` in __variables.css */
+:root {
+  /* see ../../node_modules/sails/src/styles/__typography.css for defaults */
+}
