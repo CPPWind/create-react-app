@@ -1,6 +1,7 @@
 import React from 'react';
+import '@4winds_cpp/atmosphere/css/global.css';
 import './styles/client.css';
-import SiteRouter from 'pages';
+import SiteRouter from './pages';
 import ReactHelmet from 'react-helmet';
 
 const App = () => (

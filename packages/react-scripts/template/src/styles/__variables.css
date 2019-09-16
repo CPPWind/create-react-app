@@ -10,6 +10,6 @@
 
 :root {
   --body-background-color: var(--light-blue);
-  --body-background-texture: url('../../public/images/clouds.jpg');
+  --body-background-texture: url('../images/clouds.jpg');
   --main-background: var(--body-background-texture) var(--body-background-color);
 }
