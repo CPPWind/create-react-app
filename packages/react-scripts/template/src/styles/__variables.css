@@ -3,10 +3,10 @@
  */
 
 /* for variables related to this project */
-//@import '__fonts.css';
-//@import '__layout.css';
-//@import '__media.css';
-//@import '__palette.css';
+/* @import '__fonts.css'; */
+/* @import '__layout.css'; */
+/* @import '__media.css'; */
+/* @import '__palette.css'; */
 
 :root {
   --body-background-color: var(--light-blue);
