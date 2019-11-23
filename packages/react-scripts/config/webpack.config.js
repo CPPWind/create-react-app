@@ -532,14 +532,15 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders({
                 importLoaders: 1,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
-                modules: true,
-                getLocalIdent: (
-                  context,
-                  localIdentName,
-                  localName,
-                  options
-                ) => {
-                  return generateScopedName(localName, context.resourcePath);
+                modules: {
+                  getLocalIdent: (
+                    context,
+                    localIdentName,
+                    localName,
+                    options
+                  ) => {
+                    return generateScopedName(localName, context.resourcePath);
+                  },
                 },
                 //
                 // getLocalIdent: getCSSModuleLocalIdent,
