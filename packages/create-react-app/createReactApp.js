@@ -195,7 +195,9 @@ function init() {
   checkForLatestVersion()
     .catch(() => {
       try {
-        return execSync('npm view create-react-app version').toString().trim();
+        return execSync('npm view create-react-app version')
+          .toString()
+          .trim();
       } catch (e) {
         return null;
       }
@@ -205,7 +207,9 @@ function init() {
         console.log();
         console.error(
           chalk.yellow(
-            `You are running \`create-react-app\` ${packageJson.version}, which is behind the latest release (${latest}).\n\n` +
+            `You are running \`create-react-app\` ${
+              packageJson.version
+            }, which is behind the latest release (${latest}).\n\n` +
               'We no longer support global installation of Create React App.'
           )
         );
@@ -240,7 +244,9 @@ function createApp(name, verbose, version, template, useNpm, usePnp) {
   if (unsupportedNodeVersion) {
     console.log(
       chalk.yellow(
-        `You are using Node ${process.version} so the project will be bootstrapped with an old unsupported version of tools.\n\n` +
+        `You are using Node ${
+          process.version
+        } so the project will be bootstrapped with an old unsupported version of tools.\n\n` +
           `Please update to Node 10 or higher for a better, fully supported experience.\n`
       )
     );
@@ -284,7 +290,9 @@ function createApp(name, verbose, version, template, useNpm, usePnp) {
       if (npmInfo.npmVersion) {
         console.log(
           chalk.yellow(
-            `You are using npm ${npmInfo.npmVersion} so the project will be bootstrapped with an old unsupported version of tools.\n\n` +
+            `You are using npm ${
+              npmInfo.npmVersion
+            } so the project will be bootstrapped with an old unsupported version of tools.\n\n` +
               `Please update to npm 6 or higher for a better, fully supported experience.\n`
           )
         );
@@ -298,7 +306,9 @@ function createApp(name, verbose, version, template, useNpm, usePnp) {
       if (!yarnInfo.hasMinYarnPnp) {
         console.log(
           chalk.yellow(
-            `You are using Yarn ${yarnInfo.yarnVersion} together with the --use-pnp flag, but Plug'n'Play is only supported starting from the 1.12 release.\n\n` +
+            `You are using Yarn ${
+              yarnInfo.yarnVersion
+            } together with the --use-pnp flag, but Plug'n'Play is only supported starting from the 1.12 release.\n\n` +
               `Please update to Yarn 1.12 or higher for a better, fully supported experience.\n`
           )
         );
@@ -321,8 +331,9 @@ function createApp(name, verbose, version, template, useNpm, usePnp) {
     let yarnUsesDefaultRegistry = true;
     try {
       yarnUsesDefaultRegistry =
-        execSync('yarnpkg config get registry').toString().trim() ===
-        'https://registry.yarnpkg.com';
+        execSync('yarnpkg config get registry')
+          .toString()
+          .trim() === 'https://registry.yarnpkg.com';
     } catch (e) {
       // ignore
     }
@@ -774,7 +785,9 @@ function checkNpmVersion() {
   let hasMinNpm = false;
   let npmVersion = null;
   try {
-    npmVersion = execSync('npm --version').toString().trim();
+    npmVersion = execSync('npm --version')
+      .toString()
+      .trim();
     hasMinNpm = semver.gte(npmVersion, '6.0.0');
   } catch (err) {
     // ignore
@@ -792,7 +805,9 @@ function checkYarnVersion() {
   let hasMaxYarnPnp = false;
   let yarnVersion = null;
   try {
-    yarnVersion = execSync('yarnpkg --version').toString().trim();
+    yarnVersion = execSync('yarnpkg --version')
+      .toString()
+      .trim();
     if (semver.valid(yarnVersion)) {
       hasMinYarnPnp = semver.gte(yarnVersion, minYarnPnp);
       hasMaxYarnPnp = semver.lt(yarnVersion, maxYarnPnp);
@@ -1011,7 +1026,9 @@ function getProxy() {
   } else {
     try {
       // Trying to read https-proxy from .npmrc
-      let httpsProxy = execSync('npm config get https-proxy').toString().trim();
+      let httpsProxy = execSync('npm config get https-proxy')
+        .toString()
+        .trim();
       return httpsProxy !== 'null' ? httpsProxy : undefined;
     } catch (e) {
       return;

@@ -150,7 +150,9 @@ checkBrowsers(paths.appPath, isInteractive)
       if (env.raw.FAST_REFRESH && semver.lt(react.version, '16.10.0')) {
         console.log(
           chalk.yellow(
-            `Fast Refresh requires React 16.10 or higher. You are using React ${react.version}.`
+            `Fast Refresh requires React 16.10 or higher. You are using React ${
+              react.version
+            }.`
           )
         );
       }
@@ -159,8 +161,8 @@ checkBrowsers(paths.appPath, isInteractive)
       openBrowser(urls.localUrlForBrowser);
     });
 
-    ['SIGINT', 'SIGTERM'].forEach(function (sig) {
-      process.on(sig, function () {
+    ['SIGINT', 'SIGTERM'].forEach(function(sig) {
+      process.on(sig, function() {
         devServer.close();
         process.exit();
       });
@@ -168,7 +170,7 @@ checkBrowsers(paths.appPath, isInteractive)
 
     if (process.env.CI !== 'true') {
       // Gracefully exit when stdin ends
-      process.stdin.on('end', function () {
+      process.stdin.on('end', function() {
         devServer.close();
         process.exit();
       });
