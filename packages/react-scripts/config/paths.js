@@ -19,7 +19,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
 // "public path" at which the app is served.
-// Webpack needs to know it to put the right <script> hrefs into HTML even in
+// webpack needs to know it to put the right <script> hrefs into HTML even in
 // single-page apps that may serve index.html for nested URLs like /todos/42.
 // We can't use a relative path in HTML because we don't want to load something
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
@@ -72,6 +72,7 @@ module.exports = {
   testsSetup: resolveModule(resolveApp, 'src/setupTests'),
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
+  swSrc: resolveModule(resolveApp, 'src/service-worker'),
   publicUrlOrPath,
 };
 
@@ -94,6 +95,7 @@ module.exports = {
   testsSetup: resolveModule(resolveApp, 'src/setupTests'),
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
+  swSrc: resolveModule(resolveApp, 'src/service-worker'),
   publicUrlOrPath,
   // These properties only exist before ejecting:
   ownPath: resolveOwn('.'),
@@ -129,6 +131,7 @@ if (
     testsSetup: resolveModule(resolveOwn, `${templatePath}/src/setupTests`),
     proxySetup: resolveOwn(`${templatePath}/src/setupProxy.js`),
     appNodeModules: resolveOwn('node_modules'),
+    swSrc: resolveModule(resolveOwn, `${templatePath}/src/service-worker`),
     publicUrlOrPath,
     // These properties only exist before ejecting:
     ownPath: resolveOwn('.'),

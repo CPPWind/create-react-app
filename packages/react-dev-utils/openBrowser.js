@@ -45,7 +45,7 @@ function getBrowserEnv() {
 
 function executeNodeScript(scriptPath, url) {
   const extraArgs = process.argv.slice(2);
-  const child = spawn('node', [scriptPath, ...extraArgs, url], {
+  const child = spawn(process.execPath, [scriptPath, ...extraArgs, url], {
     stdio: 'inherit',
   });
   child.on('close', code => {
@@ -123,7 +123,7 @@ function startBrowserProcess(browser, url, args) {
   // Fallback to open
   // (It will always open new tab)
   try {
-    var options = { app: browser, wait: false };
+    var options = { app: browser, wait: false, url: true };
     open(url, options).catch(() => {}); // Prevent `unhandledRejection` error.
     return true;
   } catch (err) {
